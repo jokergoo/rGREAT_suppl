@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 `great()` supports various sources to obtain gene TSS. The sources can be one of:
 
 - a `TxDb.*` package such as **TxDb.Hsapiens.UCSC.hg38.knownGene**,
-- RefSeq database (mainly the "RefSeqSelect" subset (see https://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg38&g=refSeqComposite for different subsets of RefSeq),
+- RefSeq database (mainly the "RefSeq Select" subset (see https://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg38&g=refSeqComposite for different subsets of RefSeq),
 - Gencode annotation,
 - TSS provided by GREAT itself.
 
