@@ -46,12 +46,9 @@ gr = GRanges(seqnames = df[, 1], ranges = IRanges(df[, 2] + 1, df[, 3]))
 
 The next two GREAT analysis uses the whole genome as background and excludes gap regions.
 
-
 ```{r}
-res1 = great(gr, "GO:BP", "hg19")
-gap = getGapFromUCSC("hg19")
-gap = gap[seqnames(gap) %in% paste0("chr", c(1:22, "X", "Y"))]
-res2 = great(gr, "GO:BP", "hg19", exclude = gap)
+res1 = great(gr, "GO:BP", "hg19", exclude = NULL)
+res2 = great(gr, "GO:BP", "hg19", exclude = "gap")
 ```
 
 And we compare the significant GO terms:

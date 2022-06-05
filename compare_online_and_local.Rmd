@@ -16,7 +16,14 @@ knitr::opts_chunk$set(
     error = FALSE,
     tidy  = FALSE,
     message = FALSE,
+    warning = FALSE,
+    cache = TRUE,
     fig.align = "center")
+```
+
+```{r}
+library(rGREAT)
+library(eulerr)
 ```
 
 In this document, we will compare the enrichment results from online GREAT and local GREAT. The four
@@ -49,15 +56,9 @@ sapply(grl, length)
 ```
 
 
-```{r}
-library(rGREAT)
-library(eulerr)
-```
-
-
 ## A549_JUN (`r length(grl$A549_JUN)` input regions)
 
-Apply both online and local GREAT analysis:
+Apply both online and local GREAT analysis. Note online GREAT exclude gap regions, thus in local GREAT, gap regions are removed as well.
 
 ```{r}
 gr = grl$A549_JUN
