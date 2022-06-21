@@ -188,7 +188,7 @@ barplot(n_gr, horiz = TRUE, las = 1, xlab = "Number",
 text(n_gr, 1:3, n_gr)
 ```
 
-It is quite astonishing that there are only 62 TFBS peaks in heterochromatin regions which covers more
+It is quite astonishing that there are only 62 TFBS peaks in heterochromatin regions, but the heterochromatin regions cover more
 than 90% of the genome. We check the top most significant GO terms:
 
 ```{r}

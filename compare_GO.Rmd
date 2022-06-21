@@ -46,7 +46,7 @@ res2 = great(gr, "GO:BP", "GREAT:hg19", min_gene_set_size = 0)
 tb2 = getEnrichmentTable(res2, min_region_hits = 0)
 ```
 
-We first compare the GO terms in the two sources:
+`tb1` and `tb2` contain the full set of GO terms under test, thus, we can compare the GO terms in the two sources:
 
 ```{r}
 library(eulerr)
@@ -133,8 +133,18 @@ plot(tb2$gene_set_size, tb3$gene_set_size, xlim = c(0, max), ylim = c(0, max),
 So here we see GO gene sets from **GO.db** and MSigDb are almost identical (the third plot), while
 there are certain degrees of inconsistency between online GREAT and the other two (the first two plots).
 
-Now we can make the conclusion that the GO gene sets in online GREAT are outdated and are not consistent
+Now we can make the conclusion that the GO gene sets in online GREAT are outdated and are not very consistent
 to the most up-to-date ones.
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

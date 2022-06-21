@@ -1,0 +1,32 @@
+---
+title: "Install rGREAT for review"
+author: "Zuguang Gu ( z.gu@dkfz.de )"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(knitr)
+knitr::opts_chunk$set(
+    error = FALSE,
+    tidy  = FALSE,
+    message = FALSE,
+    eval = FALSE,
+    fig.align = "center")
+```
+
+
+**rGREAT** has not yet been available on Bioconductor release branch (will be on around Octorber this year). Reviewers can
+install **rGREAT** from GitHub:
+
+```{r}
+library(devtools)
+install_github("jokergoo/rGREAT")
+```
+
+
+The new version of **rGREAT** is also available on Bioconductor development branch, which can be installed by :
+
+```{r}
+BiocManager::install(version='devel')
+```

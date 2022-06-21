@@ -58,7 +58,7 @@ sapply(grl, length)
 
 ## A549_JUN (`r length(grl$A549_JUN)` input regions)
 
-Apply both online and local GREAT analysis. Note online GREAT exclude gap regions, thus in local GREAT, gap regions are removed as well.
+Apply both online and local GREAT analysis. Note online GREAT exclude gap regions, and in local GREAT, by default gap regions are removed as well.
 
 ```{r}
 gr = grl$A549_JUN
@@ -70,7 +70,7 @@ res = great(gr, "GO:BP", "hg19")
 tb2 = getEnrichmentTable(res)
 ```
 
-Overlap of significant GO terms, but only those GO terms both existing in the two enrichment tables.
+`tb1` and `tb2` contain the full table of all GO terms under test. First we take the common GO terms in the two result tables.
 
 ```{r}
 cn = intersect(tb1$ID, tb2$id)
@@ -81,6 +81,7 @@ tb1 = tb1[cn, ]
 tb2 = tb2[cn, ]
 ```
 
+The significant GO terms from the two tables.
 
 ```{r}
 lt2 = list(online = tb1$ID[tb1$Binom_Adjp_BH < 0.001],
@@ -125,8 +126,7 @@ res = great(gr, "GO:BP", "hg19")
 tb2 = getEnrichmentTable(res)
 ```
 
-
-Overlap of significant GO terms, but only those GO terms both existing in the two enrichment tables.
+`tb1` and `tb2` contain the full table of all GO terms under test. First we take the common GO terms in the two result tables.
 
 ```{r}
 cn = intersect(tb1$ID, tb2$id)
@@ -137,6 +137,7 @@ tb1 = tb1[cn, ]
 tb2 = tb2[cn, ]
 ```
 
+The significant GO terms from the two tables.
 
 ```{r}
 lt2 = list(online = tb1$ID[tb1$Binom_Adjp_BH < 0.001],
@@ -181,7 +182,7 @@ tb2 = getEnrichmentTable(res)
 ```
 
 
-Overlap of significant GO terms, but only those GO terms both existing in the two enrichment tables.
+`tb1` and `tb2` contain the full table of all GO terms under test. First we take the common GO terms in the two result tables.
 
 ```{r}
 cn = intersect(tb1$ID, tb2$id)
@@ -191,6 +192,8 @@ rownames(tb2) = tb2$id
 tb1 = tb1[cn, ]
 tb2 = tb2[cn, ]
 ```
+
+The significant GO terms from the two tables.
 
 
 ```{r}
@@ -237,7 +240,7 @@ tb2 = getEnrichmentTable(res)
 ```
 
 
-Overlap of significant GO terms, but only those GO terms both existing in the two enrichment tables.
+`tb1` and `tb2` contain the full table of all GO terms under test. First we take the common GO terms in the two result tables.
 
 ```{r}
 cn = intersect(tb1$ID, tb2$id)
@@ -247,6 +250,8 @@ rownames(tb2) = tb2$id
 tb1 = tb1[cn, ]
 tb2 = tb2[cn, ]
 ```
+
+The significant GO terms from the two tables.
 
 
 ```{r}
