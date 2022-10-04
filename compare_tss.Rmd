@@ -1,5 +1,5 @@
 ---
-title: "Compare different TSS sources"
+title: "Suppl 4. Compare different TSS sources"
 author: "Zuguang Gu ( z.gu@dkfz.de )"
 date: '`r Sys.Date()`'
 output: html_document
@@ -27,7 +27,7 @@ In this document, we will compare different TSS sources and their influence on G
 We use human genome hg38 here because there will be gene ID conversions (e.g. from Ensembl ID to Entrez ID for Gencode annotation), using
 the newest genome annotation version will reduce the inconsistency between different sources.
 
-The helper function `getTSS()` extracts TSS from a specific source. Note genes in the first four sources are protein-coding genes.
+The helper function `getTSS()` extracts TSS from a specific source. Note genes in the four sources are protein-coding genes.
 
 ```{r}
 library(rGREAT)
@@ -76,7 +76,8 @@ cm = make_comb_mat(lt)
 UpSet(cm, column_title = "Number of genes")
 ```
 
-Next we look at the overlap of TSS with their exact positions.
+Next we look at the overlap of TSS with their exact positions. There are quite a large disagreement between different
+TSS sources.
 
 ```{r}
 lt = lapply(tss_lt, function(x) {
@@ -87,6 +88,8 @@ UpSet(cm, column_title = "Number of TSS (with their exact positions)")
 ```
 
 
+Next we compare difference of TSS locations in different sources. We first
+take the common genes in all four sources.
 
 ```{r}
 tss_lt2 = lapply(tss_lt, function(x) {
@@ -104,6 +107,7 @@ length(cn)
 tss_lt2 = lapply(tss_lt2, function(x) x[cn])
 ```
 
+Next we perform pairwise comparisons for every pair of TSS sources.
 
 ```{r, fig.width = 12, fig.height = 12}
 library(GetoptLong)
@@ -161,7 +165,7 @@ kable(pos_mat2, row.names = FALSE)
 
 ## Influence on GREAT enrichment
 
-TSS, although have different positions in different sources, are quite close. We next examnine whether the inconsistency of TSS positions affects the GREAT enrichment analysis.
+Although TSSs have different positions in different sources, they are located quite closely. We next check whether the inconsistency of TSS positions affects the GREAT enrichment analysis.
 
 In the next example, we use a dataset from [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables). The parameters are as follows:
 
@@ -174,7 +178,7 @@ track = TF ChIP
 table = A549 MYC (encTfChipPkENCFF542GMN)
 ```
 
-Similarly, we perform local GREAT with five different TSS sources.
+Similarly, we perform local GREAT with four different TSS sources.
 
 ```{r}
 df = read.table("data/A549_MYC_encTfChipPkENCFF542GMN_hg38.bed")
@@ -227,4 +231,13 @@ for(i in 1:4) {
         }
     }
 }
+```
+
+
+The results shows the enrichments are very consistent for the four different TSS sources.
+
+## Session info
+
+```{r}
+sessionInfo()
 ```

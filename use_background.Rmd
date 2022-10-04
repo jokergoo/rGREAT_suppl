@@ -1,5 +1,5 @@
 ---
-title: "Use background regions"
+title: "Suppl 1. Use background regions"
 author: "Zuguang Gu ( z.gu@dkfz.de )"
 date: '`r Sys.Date()`'
 output:
@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
     tidy  = FALSE,
     message = FALSE,
     warning = FALSE,
-    cache = TRUE,
     fig.align = "center")
 ```
 
@@ -25,6 +24,8 @@ knitr::opts_chunk$set(
 
 In this document, we will discuss the use of background regions. We first demonstrate it
 with a ChIP-seq TFBS dataset from [UCSC table browser](https://genome.ucsc.edu/cgi-bin/hgTables). Parameters are:
+
+In the "Select dataset" section:
 
 ```
 clade = Mammal
@@ -34,6 +35,15 @@ group = Regulation
 track = ENCODE 3 TFBS
 table: GM12878 MYB
 ```
+
+And in the "Retrieve and display data" section:
+
+```
+output format = BED - browser extensible data
+```
+
+Then click the button "get output".
+
 
 We first read it as a `GRanges` object.
 
@@ -197,7 +207,7 @@ head(tb)
 ```
 
 Take the first term "GO:0032940" for example, we can actually see, although there are only 62
-TFBS peaks, 20 of them are associated with "GO:0032940" and it is almost four times higher than the expected number:
+TFBS peaks, 20 of them are associated with "GO:0032940" and it is more than five times higher than the expected number:
 62\*0.0844 = 5.2.
 
 However, the mean distance of "GO:0032940" associated TFBS peaks to TSS in the
@@ -231,4 +241,9 @@ sig_lt2 = lapply(res_list[1:2], function(x) {
 simplifyGOFromMultipleLists(sig_lt2)
 ```
 
+## Session info
+
+```{r}
+sessionInfo()
+```
 

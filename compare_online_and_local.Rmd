@@ -1,5 +1,5 @@
 ---
-title: "Compare online and local GREAT"
+title: "Suppl 3. Compare online and local GREAT"
 author: "Zuguang Gu ( z.gu@dkfz.de )"
 date: '`r Sys.Date()`'
 output:
@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
     tidy  = FALSE,
     message = FALSE,
     warning = FALSE,
-    cache = TRUE,
     fig.align = "center")
 ```
 
@@ -37,6 +36,14 @@ group = Regulation
 track = ENCODE 3 TFBS
 table: A549 ATF3, A549 ELF1, H1-hESC RXRA, GM12878 MYB
 ```
+
+And in the “Retrieve and display data” section:
+
+```
+output format = BED - browser extensible data
+```
+
+Then click the button “get output”.
 
 We first read the files into `GRanges` objects:
 
@@ -279,5 +286,11 @@ lt3 = list(online = data.frame(id = tb1$ID, p_adjust = tb1$Binom_Adjp_BH),
 library(simplifyEnrichment)
 se_opt$verbose = FALSE
 simplifyGOFromMultipleLists(lt3, padj_cutoff = 0.001)
+```
+
+## Session info
+
+```{r}
+sessionInfo()
 ```
 

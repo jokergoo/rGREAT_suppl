@@ -1,5 +1,5 @@
 ---
-title: "Compare GO annotations from online and local GREAT"
+title: "Suppl 2. Compare GO annotations from online and local GREAT"
 author: "Zuguang Gu ( z.gu@dkfz.de )"
 date: '`r Sys.Date()`'
 output: html_document
@@ -110,6 +110,12 @@ Next we take the common GO terms in the three sources:
 ```{r}
 cn = intersect(cn, rownames(tb3))
 length(cn)
+```
+
+You may find the number of common GO terms becomes much smaller. It is because MSigDB does not
+contain the full set of GO terms. Some terms that are not informative are removed there.
+
+```{r}
 tb1 = tb1[cn, ]
 tb2 = tb2[cn, ]
 tb3 = tb3[cn, ]
@@ -137,14 +143,9 @@ Now we can make the conclusion that the GO gene sets in online GREAT are outdate
 to the most up-to-date ones.
 
 
+## Session info
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+```{r}
+sessionInfo()
+```
+

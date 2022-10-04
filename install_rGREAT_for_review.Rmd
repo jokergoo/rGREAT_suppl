@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ```
 
 
-**rGREAT** has not yet been available on Bioconductor release branch (will be on around Octorber this year). Reviewers can
+**rGREAT** has not yet been available on Bioconductor release branch (will be on around November this year). Reviewers can
 install **rGREAT** from GitHub:
 
 ```{r}
@@ -30,3 +30,5 @@ The new version of **rGREAT** is also available on Bioconductor development bran
 ```{r}
 BiocManager::install(version='devel')
 ```
+
+But you need to use the devel version of R.
