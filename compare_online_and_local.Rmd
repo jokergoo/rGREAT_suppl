@@ -34,7 +34,7 @@ genome = Human
 assembly = GRCh37/hg19
 group = Regulation
 track = ENCODE 3 TFBS
-table: A549 ATF3, A549 ELF1, H1-hESC RXRA, GM12878 MYB
+table: A549 JUN, A549 ELF1, H1-hESC RXRA, GM12878 MYB
 ```
 
 And in the “Retrieve and display data” section:
