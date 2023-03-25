@@ -5,3 +5,4 @@
 - [Suppl 2. Compare GO annotations from online and local GREAT](https://jokergoo.github.io/rGREAT_suppl/compare_GO.html)
 - [Suppl 3. Compare online and local GREAT](https://jokergoo.github.io/rGREAT_suppl/compare_online_and_local.html)
 - [Suppl 4. Compare different TSS sources](https://jokergoo.github.io/rGREAT_suppl/compare_tss.html)
+- [Suppl 5. Compare different genome versions](https://jokergoo.github.io/rGREAT_suppl/compare_genome_versions.html)
